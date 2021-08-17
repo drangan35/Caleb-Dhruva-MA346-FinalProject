@@ -87,10 +87,10 @@ def bar_chart(player):
 
 
 def main():
-    correlation_matrix()
     chosen_player = st.selectbox("Player", stats.index.tolist())
     st.markdown('All values below are on a per game basis excluding the salary column. The salary statistic is shown on a relative basis where the value 1 indicated the league average of $8.14 million')
     st.pyplot(bar_chart(chosen_player))
+    correlation_matrix()
 
 
 

@@ -67,7 +67,7 @@ def correlation_matrix():
     fig, ax = plt.subplots()
     mask = np.triu(np.ones_like(df.corr()))
     ax = sns.heatmap(corrMatrix, annot=True, mask=mask, cmap='Oranges')
-    st.pyplot(fig)
+    return fig
 
 
 def bar_chart(player):
@@ -90,7 +90,7 @@ def main():
     chosen_player = st.selectbox("Player", stats.index.tolist())
     st.markdown('All values below are on a per game basis excluding the salary column. The salary statistic is shown on a relative basis where the value 1 indicated the league average of $8.14 million')
     st.pyplot(bar_chart(chosen_player))
-    correlation_matrix()
+    st.pyplot(correlation_matrix())
 
 
 
